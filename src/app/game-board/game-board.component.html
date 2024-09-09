@@ -1,0 +1,15 @@
+<div class="game-board">
+  <div *ngFor="let row of board; let y = index" class="row">
+    <div *ngFor="let cell of row; let x = index" class="cell" [ngClass]="cell.type">
+      <ng-container [ngSwitch]="cell.type">
+        <span *ngSwitchCase="'key'">🔑</span>
+        <span *ngSwitchCase="'door'">🚪</span>
+        <span *ngSwitchCase="'wall'">⬛</span>
+      </ng-container>
+      <div *ngIf="player.x === x && player.y === y" class="player">
+        <span *ngIf="player.hasKey">😊🔑</span>
+        <span *ngIf="!player.hasKey">😊</span>
+      </div>
+    </div>
+  </div>
+</div>
