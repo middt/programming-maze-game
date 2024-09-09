@@ -1,0 +1,30 @@
+.game-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+app-game-board {
+  flex: 1;
+  margin-right: 20px;
+}
+
+app-command-input {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .game-container {
+    flex-direction: column;
+  }
+
+  app-game-board,
+  app-command-input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
